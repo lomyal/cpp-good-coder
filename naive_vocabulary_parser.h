@@ -15,7 +15,6 @@
 #ifndef CPP_GOOD_CODER_NAIVE_VOCABULARY_PARSER_H
 #define CPP_GOOD_CODER_NAIVE_VOCABULARY_PARSER_H
 
-#include <iostream>
 #include <string>
 #include "nvp_common.h"
 

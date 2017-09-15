@@ -1,0 +1,4 @@
+GCC	has	full	support	for	the	1998	C++	standard
+as	modified	by	the	2003	technical	corrigendum
+and	some	later	defect	reports	excluding	the	export
+feature	which	was	later	removed	from	the	language

@@ -13,13 +13,37 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
+#include <vector>
 #include "naive_vocabulary_parser.h"
 
 namespace naive_vocabulary_parser {
 
 void NaiveVocabularyParser::parse(const std::string& file_name) const {
-    std::cout << "TEST_FILE: " << file_name << std::endl;
+
+    // open the file
+    std::cout << "PARSING FILE: " << file_name << std::endl;
+    std::ifstream infile(file_name);
+    if (!infile.is_open()) {
+        std::cout << "FAIL TO OPEN THE FILE, EXIT." << std::endl;
+    }
+
+    // process line by line
+    std::string line;
+    while (std::getline(infile, line)) {
+        std::cout << "LINE: " << line << std::endl;
+        std::istringstream iss(line);
+        std::string word;
+        std::vector<std::string> words_in_line;
+        while (iss >> word) {
+            std::cout << "WORD IN THE LINE: " << word << std::endl;
+            words_in_line.push_back(word);
+        }
+
+        // further process of words_in_line
+    }
 }
 
 }  // namespace naive_vocabulary_parser
