@@ -18,7 +18,7 @@
 
 namespace naive_vocabulary_parser {
 
-void NaiveVocabularyParser::parse(const std::string file_name) const {
+void NaiveVocabularyParser::parse(const std::string& file_name) const {
     std::cout << "TEST_FILE: " << file_name << std::endl;
 }
 
