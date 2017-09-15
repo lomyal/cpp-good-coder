@@ -21,33 +21,46 @@
 
 namespace naive_vocabulary_parser {
 
-bool NaiveVocabularyParser::parse(const std::string& file_name) const {
+bool NaiveVocabularyParser::parse_all(const std::string& file_name) {
+    open_file(file_name);
 
-    // open the file
+    // process line by line
+    while (has_next_line()) {
+        parse_next_line();
+    }
+    return true;
+}
+
+bool NaiveVocabularyParser::open_file(const std::string &file_name){
     std::cout << "PARSING FILE: " << file_name << std::endl;
-    std::ifstream infile(file_name);
-    if (!infile.is_open()) {
+    _infile.open(file_name);
+    if (!_infile.is_open()) {
         std::cout << "FAIL TO OPEN THE FILE, EXIT." << std::endl;
         return false;
     }
-
-    // process line by line
-    std::string line;
-    while (std::getline(infile, line)) {
-        std::cout << "LINE: " << line << std::endl;
-        std::istringstream iss(line);
-        std::string word;
-        std::vector<std::string> words_in_line;
-
-        // split by '\t'
-        while (std::getline(iss, word, '\t')) {
-            std::cout << "WORD IN THE LINE: " << word << std::endl;
-            words_in_line.push_back(word);
-        }
-
-        // further process of words_in_line
-    }
     return true;
+}
+
+bool NaiveVocabularyParser::parse_next_line() {
+    std::string line;
+    std::getline(_infile, line);
+    std::cout << "LINE: " << line << std::endl;
+    std::istringstream iss(line);
+    std::string word;
+    std::vector<std::string> words_in_line;
+
+    // split by '\t'
+    while (std::getline(iss, word, '\t')) {
+        std::cout << "WORD IN THE LINE: " << word << std::endl;
+        words_in_line.push_back(word);
+    }
+
+    // further process of words_in_line
+    return true;
+}
+
+bool NaiveVocabularyParser::has_next_line() {
+    return _infile.peek() != EOF;
 }
 
 }  // namespace naive_vocabulary_parser

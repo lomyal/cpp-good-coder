@@ -15,6 +15,7 @@
 #ifndef CPP_GOOD_CODER_NAIVE_VOCABULARY_PARSER_H
 #define CPP_GOOD_CODER_NAIVE_VOCABULARY_PARSER_H
 
+#include <fstream>
 #include <string>
 #include "nvp_common.h"
 
@@ -23,9 +24,15 @@ namespace naive_vocabulary_parser {
 class NaiveVocabularyParser {
 public:
     NaiveVocabularyParser() {}
-    ~NaiveVocabularyParser() {}
-    bool parse(const std::string& file_name) const;
+    ~NaiveVocabularyParser() {
+        _infile.close();
+    }
+    bool parse_all(const std::string& file_name);
+    bool open_file(const std::string& file_name);
+    bool parse_next_line();
+    bool has_next_line();
 private:
+    std::ifstream _infile;
     DISALLOW_COPY_AND_ASSIGN(NaiveVocabularyParser);
 };
 
