@@ -24,7 +24,7 @@ class NaiveVocabularyParser {
 public:
     NaiveVocabularyParser() {}
     ~NaiveVocabularyParser() {}
-    void parse(const std::string& file_name) const;
+    bool parse(const std::string& file_name) const;
 private:
     DISALLOW_COPY_AND_ASSIGN(NaiveVocabularyParser);
 };

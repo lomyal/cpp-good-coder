@@ -21,13 +21,14 @@
 
 namespace naive_vocabulary_parser {
 
-void NaiveVocabularyParser::parse(const std::string& file_name) const {
+bool NaiveVocabularyParser::parse(const std::string& file_name) const {
 
     // open the file
     std::cout << "PARSING FILE: " << file_name << std::endl;
     std::ifstream infile(file_name);
     if (!infile.is_open()) {
         std::cout << "FAIL TO OPEN THE FILE, EXIT." << std::endl;
+        return false;
     }
 
     // process line by line
@@ -37,13 +38,16 @@ void NaiveVocabularyParser::parse(const std::string& file_name) const {
         std::istringstream iss(line);
         std::string word;
         std::vector<std::string> words_in_line;
-        while (iss >> word) {
+
+        // split by '\t'
+        while (std::getline(iss, word, '\t')) {
             std::cout << "WORD IN THE LINE: " << word << std::endl;
             words_in_line.push_back(word);
         }
 
         // further process of words_in_line
     }
+    return true;
 }
 
 }  // namespace naive_vocabulary_parser
