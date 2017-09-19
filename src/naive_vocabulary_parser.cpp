@@ -22,7 +22,9 @@
 namespace naive_vocabulary_parser {
 
 bool NaiveVocabularyParser::parse_all(const std::string& file_name) {
-    open_file(file_name);
+    if (!open_file(file_name)) {
+        return false;
+    }
 
     // process line by line
     while (has_next_line()) {

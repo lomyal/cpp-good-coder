@@ -9,16 +9,16 @@
 # Brief:
 #   BUILD AND RUN THE DEMO
 # Usage:
-#   bash build_and_run.sh
+#   bash run_tests.sh
 #
 
 # COMPILE
-g++ -std=c++11 -o demo *.cpp
+g++ -std=c++11 -o tests unit_test/*.cpp src/*.cpp -lgtest
 
 # CHECK COMPILING STATUS
 if [ $? -eq 0 ]; then
     echo "======= BUILD OK ======="
-    ./demo  # RUN DEMO
+    ./tests  # RUN DEMO
 else
     echo "======= BUILD FAIL ======="
     # EXIT

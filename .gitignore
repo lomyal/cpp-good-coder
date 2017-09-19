@@ -2,6 +2,7 @@
 .idea/
 cmake-build-debug/
 demo
+tests
 
 # Prerequisites
 *.d

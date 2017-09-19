@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <string>
-#include "naive_vocabulary_parser.h"
+#include "src/naive_vocabulary_parser.h"
 
 int main() {
     naive_vocabulary_parser::NaiveVocabularyParser parser;
