@@ -12,6 +12,8 @@ int main() {
     naive_vocabulary_parser::NaiveVocabularyParser parser;
     std::string file {"./data/pure_string.txt"};
 
+//    std::cout << "parser.has_next_line() " << parser.has_next_line() << std::endl;
+
     if (!parser.parse_all(file)) {
         std::cout << "PARSING FILE " << file << " WITH NaiveVocabularyParser FAILED." << std::endl;
         return -1;

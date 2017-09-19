@@ -31,7 +31,7 @@ bool NaiveVocabularyParser::parse_all(const std::string& file_name) {
     return true;
 }
 
-bool NaiveVocabularyParser::open_file(const std::string &file_name){
+bool NaiveVocabularyParser::open_file(const std::string& file_name){
     std::cout << "PARSING FILE: " << file_name << std::endl;
     _infile.open(file_name);
     if (!_infile.is_open()) {
