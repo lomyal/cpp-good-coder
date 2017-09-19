@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../src/naive_vocabulary_parser.h"
+#include "../include/naive_vocabulary_parser.h"
 
 TEST(NaiveVocabularyParserTest, ExistingFile) {
     naive_vocabulary_parser::NaiveVocabularyParser parser;

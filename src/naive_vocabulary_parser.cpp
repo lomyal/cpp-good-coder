@@ -17,7 +17,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include "naive_vocabulary_parser.h"
+#include "../include/naive_vocabulary_parser.h"
 
 namespace naive_vocabulary_parser {
 

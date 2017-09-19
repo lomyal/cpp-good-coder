@@ -9,11 +9,11 @@
 # Brief:
 #   BUILD AND RUN THE TESTS
 # Usage:
-#   bash run_tests.sh
+#   sh run_tests.sh
 #
 
 # COMPILE
-g++ -std=c++11 -o tests unit_test/*.cpp src/*.cpp -lgtest
+g++ -std=c++11 -o tests unittest/*.cpp src/*.cpp -lgtest
 
 # CHECK COMPILING STATUS
 if [ $? -eq 0 ]; then

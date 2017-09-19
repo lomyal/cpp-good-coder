@@ -9,7 +9,7 @@
 # Brief:
 #   BUILD AND RUN THE DEMO
 # Usage:
-#   bash run_demo.sh
+#   sh run_demo.sh
 #
 
 # COMPILE
@@ -23,5 +23,4 @@ else
     echo "======= BUILD FAIL ======="
     # EXIT
 fi
-
 
