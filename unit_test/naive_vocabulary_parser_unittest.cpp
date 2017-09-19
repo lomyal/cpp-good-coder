@@ -5,7 +5,6 @@
 #include <gtest/gtest.h>
 #include "../src/naive_vocabulary_parser.h"
 
-
 TEST(NaiveVocabularyParserTest, ExistingFile) {
     naive_vocabulary_parser::NaiveVocabularyParser parser;
     std::string file {"./data/pure_string.txt"};

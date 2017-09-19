@@ -5,9 +5,9 @@
 # Author:
 #   Wang Shijun
 # Date:
-#   2017/09/15
+#   2017/09/19
 # Brief:
-#   BUILD AND RUN THE DEMO
+#   BUILD AND RUN THE TESTS
 # Usage:
 #   bash run_tests.sh
 #
